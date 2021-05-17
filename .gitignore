@@ -49,3 +49,4 @@
 /web.config
 
 /**/vendor
+.serverless/
