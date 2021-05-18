@@ -1,5 +1,6 @@
 {
     "require": {
-        "bref/bref": "^1.2"
+        "bref/bref": "^1.2",
+        "psr/cache": "1.0.1"
     }
 }
