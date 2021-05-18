@@ -30,3 +30,17 @@ jobs:
       - name: Check for PHP
         run: |
           php --version
+
+      - name: Install bref/
+        working-directory: bref
+        run: |
+          composer install
+
+      - name: Deploy bref/ to the test account
+        working-directory: bref
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.TEST_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.TEST_AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: "us-east-1"
+        run: |
+          npx serverless deploy
